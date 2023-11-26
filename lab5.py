@@ -52,31 +52,29 @@ class Cinema:
             if day == movie.release_date:
                 profit = movie.ticket_price * movie.number
                 profits[movie.title] = profit
-                return profits
+        return profits
 
     def choose_movie(self, genre, character):
         eligible_movies = []
         for movie in self.movies:
             if movie.movie_type == genre and movie.character >= character:
                 eligible_movies.append(movie)
-
         return eligible_movies
 
     def sort_movies_by_release_date(self):
         self.movies.sort(key=lambda movie: movie.release_date)
 
-
-movie1 = Movie(1, "Black Adam", "9.2", "12.04.2014", 4, 2, 10,
-               "Black Adam is an American superhero film based on the comic book of the same name by DC Comics.", TypeMovie.FANTASY)
-movie2 = Movie(2, "Sinister", "8.3", "21.11.2012", 5, 4, 9,
-               "is a horror film directed by Scott Derrickson and starring Ethan Hawke, Vincent D'Onofrio and James Ransone. The world premiere took place at the South by Southwest Film Festival on March 11, 2012.", TypeMovie.HORROR)
-movie3 = Movie(3, "John Wick: Chapter 4", "6.4", "27.10.2003", 1, 6, 7, "Action film with Keanu Reeves", TypeMovie.ACTION)
 if __name__ == "__main__":
-    cinema1 = Cinema("Planet of cinema", "Bandery 28A")
-    cinema1.add_movie(movie1)
-    cinema1.add_movie(movie2)
-    cinema1.add_movie(movie3)
-    print(cinema1)
+    movie1 = Movie(1, "Black Adam", "9.2", "12.04.2014", 4, 2, 10,
+               "Black Adam is an American superhero film based on the comic book of the same name by DC Comics.", TypeMovie.FANTASY)
+    movie2 = Movie(2, "Sinister", "8.3", "21.11.2012", 5, 4, 9,
+               "is a horror film directed by Scott Derrickson and starring Ethan Hawke, Vincent D'Onofrio and James Ransone. The world premiere took place at the South by Southwest Film Festival on March 11, 2012.", TypeMovie.HORROR)
+    movie3 = Movie(3, "John Wick: Chapter 4", "6.4", "27.10.2003", 1, 6, 7, "Action film with Keanu Reeves", TypeMovie.ACTION)
+    cinema = Cinema("Planet of cinema", "Bandery 28A")
+    cinema.add_movie(movie1)
+    cinema.add_movie(movie2)
+    cinema.add_movie(movie3)
+    print(cinema)
     print()
     print(movie1)
     print()
@@ -123,5 +121,4 @@ if __name__ == "__main__":
     print("Sorted Movies by Release Date:")
     for movie in cinema1.movies:
         print(f"{movie.title} ({movie.release_date})")
-
-#something
+        
