@@ -85,40 +85,40 @@ if __name__ == "__main__":
 
     chosen_day = "12.04.2014"
     print(f"Movies and their profits on {chosen_day}:")
-    profits = cinema1.calculate_profit(chosen_day)
+    profits = cinema.calculate_profit(chosen_day)
     for movie_title, profit in profits.items():
         print(f"{movie_title}: Profit ${profit}")
 
     chosen_day = "27.10.2003"
-    profits = cinema1.calculate_profit(chosen_day)
+    profits = cinema.calculate_profit(chosen_day)
     for movie_title, profit in profits.items():
         print(f"{movie_title}: Profit ${profit}")
 
     chosen_day = "21.11.2012"
-    profits = cinema1.calculate_profit(chosen_day)
+    profits = cinema.calculate_profit(chosen_day)
     for movie_title, profit in profits.items():
         print(f"{movie_title}: Profit ${profit}")
     print()
 
     def Eligible_movies1():
-        chosen_movies = cinema1.choose_movie(TypeMovie.ACTION, 1)
+        chosen_movies = cinema.choose_movie(TypeMovie.ACTION, 1)
         print("Eligible Movies:")
         for movie in chosen_movies:
             print(f"{movie.title} ({movie.release_date})")
     Eligible_movies1()
     def Eligible_movie2():
-        chosen_movies = cinema1.choose_movie(TypeMovie.HORROR, 5)
+        chosen_movies = cinema.choose_movie(TypeMovie.HORROR, 5)
         for movie in chosen_movies:
             print(f"{movie.title} ({movie.release_date})")
     Eligible_movie2()
     def Eligible_movie3():
-        chosen_movies = cinema1.choose_movie(TypeMovie.FANTASY, 3)
+        chosen_movies = cinema.choose_movie(TypeMovie.FANTASY, 3)
         for movie in chosen_movies:
             print(f"{movie.title} ({movie.release_date})")
     Eligible_movie3()
     print()
-    cinema1.sort_movies_by_release_date()
+    cinema.sort_movies_by_release_date()
     print("Sorted Movies by Release Date:")
-    for movie in cinema1.movies:
+    for movie in cinema.movies:
         print(f"{movie.title} ({movie.release_date})")
         
